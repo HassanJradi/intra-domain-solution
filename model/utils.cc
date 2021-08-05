@@ -116,7 +116,6 @@ namespace ns3
 		for (uint8_t i = 0; i < 8; i++)
 		{
 			number += serializedNumber[i] * pow(256, i);
-			NS_LOG_DEBUG("rc	" << number << "\t" << (uint)serializedNumber[i] );
 		}
 			NS_LOG_DEBUG("done rc");
 		

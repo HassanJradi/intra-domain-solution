@@ -24,12 +24,14 @@ NS_LOG_COMPONENT_DEFINE("AuthenticationExample");
 
 bool verbose = true;
 uint64_t dataRate = 100;
+uint64_t delay = 0;
 
 int main(int argc, char *argv[])
 {
 	CommandLine cmd;
 	cmd.AddValue("verbose", "Tell application to log if true", verbose);
 	cmd.AddValue("data-rate", "Channel data rate (kbps)", dataRate);
+	cmd.AddValue("delay", "Channel delay (ms)", delay);
 
 	cmd.Parse(argc, argv);
 
@@ -65,6 +67,7 @@ int main(int argc, char *argv[])
 
 	CsmaHelper csma;
 	csma.SetChannelAttribute("DataRate", StringValue(to_string(dataRate) + "kbps"));
+	csma.SetChannelAttribute("Delay", StringValue(to_string(delay) + "ms"));
 	NetDeviceContainer csmaNetDeviceContainer = csma.Install(radioNetwork);
 
 	PointToPointHelper pointToPoint;

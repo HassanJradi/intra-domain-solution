@@ -10,9 +10,9 @@
 
 #include "utils.h"
 
-#define idLength 4 * 8
-#define timestampLength 10 * 8
-#define hashLength 32 * 8
+#define idLength 4
+#define timestampLength 10
+#define hashLength 32
 
 namespace ns3
 {
